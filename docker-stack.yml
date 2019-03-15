@@ -24,7 +24,7 @@ services:
             placement:
                 constraints: [node.role == manager]
     vote:
-        image: docker-server/docker-org/vote:latest
+        image: docker-server/docker-org/vote:image-version
         ports:
             - 5000:80
         networks:
@@ -38,7 +38,7 @@ services:
             restart_policy:
                 condition: on-failure
     result:
-        image: docker-server/docker-org/result:latest
+        image: docker-server/docker-org/result:image-version
         ports:
             - 5001:80
         networks:
@@ -54,7 +54,7 @@ services:
                 condition: on-failure
 
     worker:
-        image: docker-server/docker-org/worker:latest
+        image: docker-server/docker-org/worker:image-version
         networks:
             - frontend
             - backend
