@@ -19,7 +19,7 @@ spec:
         io.kompose.service: db
     spec:
       containers:
-      - image: swr.cn-north-4.myhuaweicloud.com/phoenix-sample-jackyzhou/postgres:9.4
+      - image: docker-server/docker-org/postgres:9.4
         name: db
       restartPolicy: Always
       imagePullSecrets:
