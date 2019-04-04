@@ -18,7 +18,7 @@ spec:
         io.kompose.service: result
     spec:
       containers:
-      - image: swr.cn-north-4.myhuaweicloud.com/phoenix-sample-jackyzhou/result:latest
+      - image: docker-server/docker-org/result:latest
         name: result
         ports:
         - containerPort: 80
