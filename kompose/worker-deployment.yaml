@@ -18,7 +18,7 @@ spec:
         io.kompose.service: worker
     spec:
       containers:
-      - image: docker-server/docker-org/worker:latest
+      - image: docker-server/docker-org/worker:image-version
         name: worker
       imagePullSecrets:
       - name: regcred
