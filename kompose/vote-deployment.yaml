@@ -18,7 +18,7 @@ spec:
         io.kompose.service: vote
     spec:
       containers:
-      - image: docker-server/docker-org/vote:latest
+      - image: docker-server/docker-org/vote:image-version
         name: vote
         ports:
         - containerPort: 80
