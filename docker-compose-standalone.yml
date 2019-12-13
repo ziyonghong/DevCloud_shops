@@ -2,14 +2,14 @@ version: "3"
 services:
 
     redis:
-        image: docker-server/docker-org/redis:alpine
+        image: docker-server/docker-org/redis-world:alpine
         ports:
             - "6379"
         networks:
             - frontend
 
     db:
-        image: docker-server/docker-org/postgres:9.4
+        image: docker-server/docker-org/postgres-world:9.4
         volumes:
             - db-data:/var/lib/postgresql/data
         networks:
@@ -18,7 +18,7 @@ services:
             placement:
                 constraints: [node.role == manager]
     vote:
-        image: docker-server/docker-org/vote:image-version
+        image: docker-server/docker-org/vote-world:image-version
         ports:
             - 5000:80
         networks:
@@ -27,7 +27,7 @@ services:
             - redis
 
     result:
-        image: docker-server/docker-org/result:image-version
+        image: docker-server/docker-org/result-world:image-version
         ports:
             - 5001:80
         networks:
@@ -36,7 +36,7 @@ services:
             - db
 
     worker:
-        image: docker-server/docker-org/worker:image-version
+        image: docker-server/docker-org/worker-world:image-version
         networks:
             - frontend
             - backend
