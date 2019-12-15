@@ -10,7 +10,7 @@ import random
 import json
 import uuid
 import sys
-import requests
+
 
 reload(sys)
 sys.setdefaultencoding('utf-8')
