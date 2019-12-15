@@ -1,0 +1,535 @@
+<!--
+ * @Description: In User Settings Edit
+ * @Author: your name
+ * @Date: 2019-04-23 17:33:02
+ * @LastEditTime: 2019-12-12 15:51:09
+ * @LastEditors: Please set LastEditors
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>凤凰商城 - 汽车零配件网上商城(刹车、滤芯、电瓶、引擎)</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!-- @todo: fill with your company info or remove -->
+  <meta name="description" content="">
+  <meta name="author" content="Themelize.me">
+
+  <!-- Bootstrap v4.1.3 CSS via CDN -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+  <!-- Plugins required on all pages NOTE: Additional non-required plugins are loaded ondemand as of AppStrap 2.5 -->
+
+  <!-- Theme style -->
+  <link href="assets/css/theme-style.min.css" rel="stylesheet">
+
+  <!-- Shop UI CSS - required if using shopping cart or any shop pages -->
+  <link href="assets/css/theme-shop.min.css" rel="stylesheet">
+
+  <!--Your custom colour override-->
+  <link href="#" id="colour-scheme" rel="stylesheet">
+
+  <!-- Your custom override -->
+  <link href="assets/css/custom-style.css" rel="stylesheet">
+
+
+
+  <!-- Optional: ICON SETS -->
+  <!-- Iconset: Font Awesome 5.0.13 via CDN -->
+  <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
+  <!-- Iconset: flag icons - http://lipis.github.io/flag-icon-css/ -->
+  <link href="assets/plugins/flag-icon-css/css/flag-icon.min.css" rel="stylesheet">
+  <!-- Iconset: ionicons - http://ionicons.com/ -->
+  <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
+  <!-- Iconset: Linearicons - https://linearicons.com/free -->
+  <link href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css" rel="stylesheet">
+  <!-- Iconset: Lineawesome - https://icons8.com/articles/line-awesome -->
+  <link href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css" rel="stylesheet">
+
+
+  <!-- Le fav and touch icons - @todo: fill with your icons or remove, try https://realfavicongenerator.net -->
+  <link rel="manifest" href="assets/favicons/manifest.json">
+  <link rel="shortcut icon" href="assets/favicons/favicon.ico">
+  <meta name="msapplication-config" content="assets/favicons/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+
+
+  <!-- Google fonts -->
+  <link href='assets/fonts/OpenSans.css' rel='stylesheet' type='text/css'>
+  <link href='assets/fonts/Rambla.css' rel='stylesheet' type='text/css'>
+  <link href='assets/fonts/Calligraffitti.css' rel='stylesheet' type='text/css'>
+  <link href='assets/fonts/RobotoSlab.css' rel='stylesheet' type='text/css'>
+  <link href='assets/fonts/Roboto.css' rel='stylesheet' type='text/css'>
+
+</head>
+
+<!-- ======== @Region: body ======== -->
+<body class="page page-shop header-compact-sticky page-shop navbar-layout-navbar-below" onload="shop_list()">
+
+<!-- @plugin: page loading indicator, delete to remove loader -->
+<div class="page-loader" data-toggle="page-loader"></div>
+
+<a id="#top" href="#content" class="sr-only">Skip to content</a>
+
+<!-- ======== @Region: #header ======== -->
+<div id="header">
+  <div data-toggle="sticky">
+
+    <!--Header search region - hidden by default -->
+    <div class="header-search collapse" id="search">
+      <form class="search-form container">
+        <input type="text" name="search" class="form-control search" value="" placeholder="Search">
+        <button type="button" class="btn btn-link"><span class="sr-only">Search </span><i class="fa fa-search fa-flip-horizontal search-icon"></i></button>
+        <button type="button" class="btn btn-link close-btn" data-toggle="search-form-close"><span class="sr-only">Close </span><i class="fa fa-times search-icon"></i></button>
+      </form>
+    </div>
+
+    <!--Header & Branding region-->
+    <div class="header">
+      <!-- all direct children of the .header-inner element will be vertically aligned with each other you can override all the behaviours using the flexbox utilities (flexbox.html) All elements with .header-brand & .header-block-flex wrappers will automatically be aligned inline & vertically using flexbox, this can be overridden using the flexbox utilities (flexbox.htm) Use .header-block to stack elements within on small screen & "float" on larger screens use .order-first or/and .order-last classes to make an element show first or last within .header-inner or .headr-block elements -->
+      <div class="header-inner container justify-content-start">
+        <!--branding/logo -->
+        <div class="header-brand">
+          <img src="assets/img/logo/logo.png" height="50" width="50" class="pull-left mr-1">
+          <a class="header-brand-text" href="#" title="Home">
+            <h1 class="h2">
+              <span class="header-brand-text-alt">凤凰汽车零部件 </span>网上商城
+            </h1>
+          </a>
+        </div>
+        <!-- other header content -->
+        <div class="header-block order-12">
+          <div class="flex-column text-right d-none d-lg-flex mr-2">
+            <h6 class="my-0 mt-1">
+              <i class="fa fa-truck text-primary"></i> 全球限时免邮
+            </h6>
+
+          </div>
+
+          <!--Search trigger -->
+          <a href="#search" class="btn btn-icon btn-link header-btn float-right order-11" data-toggle="search-form" data-target=".header-search"><i class="fa fa-search fa-flip-horizontal search-icon"></i></a>
+
+          <!-- mobile collapse menu button - data-toggle="collapse" = default BS menu - data-toggle="off-canvas" = Off-cavnas Menu - data-toggle="overlay" = Overlay Menu -->
+          <a href="#top" class="btn btn-link btn-icon header-btn float-right d-lg-none" data-toggle="off-canvas" data-target=".navbar-main" data-settings='{"cloneTarget":true, "targetClassExtras": "navbar-offcanvas"}'> <i class="fa fa-bars"></i> </a>
+          <div class="header-divider d-none d-lg-block"></div>
+
+          <!--Shopping cart-->
+          <div class="dropdown dropdowns-no-carets dropdown-effect-fadeup float-right">
+            <a href="#" class="btn btn-icon btn-dark btn-link float-right dropdown-toggle cart-link" data-toggle="dropdown">
+              <span class="cart-link-icon"> <i class="fa fa-shopping-cart"></i> <span class="sr-only">Cart</span> <span class="cart-link-count bg-primary text-white">2</span> </span>
+            </a>
+
+            <!--Shopping cart dropdown -->
+            <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow cart-dropdown-menu" role="menu">
+              <h5 class="dropdown-header mb-0">
+                购物车列表
+              </h5>
+              <hr class="mt-0 mb-3" />
+              <!--Shopping cart items-->
+              <div class="cart-items">
+                <!--Shopping cart item 1 -->
+                <div class="cart-items-item">
+                  <a href="#" class="cart-img mr-2 float-left">
+                    <img class="img-fluid" src="assets/img/shop/air01.jpeg" alt="Product 1">
+                  </a>
+                  <div class="float-left">
+                    <h5 class="mb-0">
+                      空气滤芯
+                    </h5>
+                    <p class="mb-0">¥90 / x2</p>
+                    <a href="#" class="close cart-remove text-primary"> <i class="fa fa-times"></i> </a>
+                  </div>
+                </div>
+                <!--Shopping cart item 2 -->
+                <div class="cart-items-item">
+                  <a href="#" class="cart-img mr-2 float-left">
+                    <img class="img-fluid" src="assets/img/shop/air02.jpeg" alt="Product 2">
+                  </a>
+                  <div class="float-left">
+                    <h5 class="mb-0">
+                      汽油滤芯
+                    </h5>
+                    <p class="mb-0">¥69 / x1</p>
+                    <a href="#" class="close cart-remove text-primary"> <i class="fa fa-times"></i> </a>
+                  </div>
+                </div>
+
+              </div>
+              <!--End of Shopping cart items-->
+              <hr class="mt-3 mb-0" />
+              <div class="dropdown-footer text-center">
+                <h5 class="font-weight-bold">
+                  合计: <span class="text-primary">¥249</span>
+                </h5>
+                <a href="#" tabindex="-1" class="btn btn-outline-primary btn-sm btn-rounded mx-2">清理购物车</a> <a href="#" tabindex="-1" class="btn btn-primary btn-sm btn-rounded mx-2">去结算</a>
+              </div>
+            </div>
+          </div>
+          <!-- end of shopping cart -->
+        </div>
+      </div>
+    </div>
+
+    <div class="navbar navbar-expand-md">
+      <!--everything within this div is collapsed on mobile-->
+      <div class="navbar-main collapse bg-grey-dark navbar-dark">
+        <div class="container clearfix">
+          <!--main navigation-->
+          <ul class="nav navbar-nav float-lg-left navbar-nav-flush dropdown-effect-fadeup ml-1">
+            <!-- Shop Homepage -->
+            <li class="nav-item"> <a href="index" class="nav-link">主页</a> </li>
+            <li class="nav-item"> <a href="#" class="nav-link">产品列表</a> </li>
+            <li class="nav-item"> <a href="#" class="nav-link">招商加盟</a> </li>
+            <li class="nav-item"> <a href="shop_list" class="nav-link">线下门店</a> </li>
+            <li class="nav-item"> <a href="#" class="nav-link">客服中心</a> </li>
+
+          </ul>
+          <!-- All Categories menu -->
+          <ul class="nav navbar-nav float-lg-right navbar-nav-flush-right dropdown-effect-fadeup">
+            <li class="nav-item dropdown dropdowns-no-carets dropdown-persist">
+              <a href="#" class="nav-link dropdown-toggle" id="account-drop" data-toggle="dropdown" data-hover="dropdown"><i class="fa fa-user mr-2"></i>我的账户</a>
+              <!-- Dropdown Menu -->
+              <div class="dropdown-menu dropdown-menu-right"> <a href="#" class="dropdown-item">我的收藏</a> <a href="#" class="dropdown-item">订单记录</a>
+            </li>
+            <li class="nav-item dropdown dropdowns-no-carets dropdown-persist"> <a href="#" class="btn btn-primary btn-sm btn-rounded text-uppercase font-weight-bold px-3 ml-3">促销商品</a> </li>
+          </ul>
+        </div>
+      </div>
+      <!--/.navbar-collapse -->
+    </div>
+  </div>
+</div>
+
+<!-- ======== @Region: #highlighted ======== -->
+
+<!-- ======== @Region: #content ======== -->
+<form id="choice" name='form' method="POST" action="/">
+  <div id="content" class="p-0">
+
+  <!-- Most Popular Products -->
+  <div id="features" class="container py-4 py-lg-6">
+    <hr class="hr-lg mt-0 mb-3 w-10 mx-auto hr-primary" />
+    <h2 class="text-center text-uppercase font-weight-bold my-0">
+      线下门店
+    </h2>
+    <h5 class="text-center font-weight-light mt-2 mb-0 text-muted">
+      offline store
+    </h5>
+    <hr class="mb-5 w-50 mx-auto" />
+    <!-- Products cards -->
+    <div class="card-deck-wrapper">
+        
+           
+      
+
+    </div>
+  </div>
+  <!-- Call to action -->
+
+</div>
+</form>
+
+
+<!-- ======== @Region: #footer ======== -->
+<footer id="footer">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-lg-4">
+        <h3 class="text-white text-uppercase text-slab font-weight-bold">
+          凤凰<span class="text-primary">商城</span>
+        </h3>
+        <p class="text-sm"> 顾客至上 服务第一 </p>
+        <address>
+          <ul class="list-unstyled text-sm">
+
+            <li>
+              <abbr title="Email"><i class="fa fa-envelope fa-fw text-white"></i></abbr>
+              Info@PartsUnlimited.com
+            </li>
+
+          </ul>
+        </address>
+        <!--social media icons-->
+        <div class="mt-3 mb-4 mb-lg-0">
+          <!--@todo: replace with company social media details-->
+          <a href="#" class="btn btn-icon btn-dark btn-rounded btn-flat"> <i class="fab fa-twitter"></i> <span class="sr-only">Fa twitter</span> </a>
+          <a href="#" class="btn btn-icon btn-dark btn-rounded btn-flat"> <i class="fab fa-facebook-f"></i> <span class="sr-only">Fa facebook f</span> </a>
+          <a href="#" class="btn btn-icon btn-dark btn-rounded btn-flat"> <i class="fab fa-linkedin-in"></i> <span class="sr-only">Fa linkedin in</span> </a>
+          <a href="#" class="btn btn-icon btn-dark btn-rounded btn-flat"> <i class="fab fa-google-plus-g"></i> <span class="sr-only">Fa google plus g</span> </a>
+        </div>
+      </div>
+
+      <div class="col-lg-7 offset-lg-1">
+        <div class="row">
+          <div class="col-6 col-md-3">
+            <h4 class="mt-0 text-slab">
+              制动配件
+            </h4>
+            <ul class="list-unstyled footer-links">
+              <li><a href="#">刹车片</a></li>
+              <li><a href="#">刹车钳</a></li>
+              <li><a href="#">制动液</a></li>
+              <li><a href="#">刹车软管</a></li>
+
+            </ul>
+          </div>
+          <div class="col-6 col-md-3">
+            <h4 class="mt-0 text-slab">
+              滤清器
+            </h4>
+            <ul class="list-unstyled footer-links">
+              <li><a href="#">空气滤清器</a></li>
+              <li><a href="#">燃油滤清器</a></li>
+              <li><a href="#">机油滤清器</a></li>
+
+            </ul>
+          </div>
+          <div class="col-6 col-md-3">
+            <h4 class="mt-0 text-slab">
+              电瓶
+            </h4>
+            <ul class="list-unstyled footer-links">
+              <li><a href="#">汽车电瓶</a></li>
+              <li><a href="#">电瓶充电器</a></li>
+              <li><a href="#">电瓶铜搭火线</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-md-3">
+            <h4 class="mt-0 text-slab">
+              发动机配件
+            </h4>
+            <ul class="list-unstyled footer-links">
+              <li><a href="#">发动机垫圈</a></li>
+              <li><a href="#">发动机曲轴</a></li>
+              <li><a href="#">三元催化器</a></li>
+
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="my-4 hr-white op-1" />
+    <!--@todo: replace with company copyright details-->
+    <div class="subfooter text-sm text-center">
+      <p>Copyright 2018 &copy; 无限极汽车零部件有限公司</p>
+      <ul class="list-inline footer-links">
+        <li class="list-inline-item"><a href="#">服务条款</a></li>
+        <li class="list-inline-item"><a href="#">隐私</a></li>
+        <li class="list-inline-item"><a href="#">联系我们</a></li>
+      </ul>
+    </div>
+  </div>
+  <a href="#top" class="btn btn-icon btn-dark pos-fixed pos-b pos-r mr-3 mb-3 scroll-state-hidden" title="Back to top" data-scroll="scroll-state"><i class="fa fa-chevron-up"></i></a>
+</footer>
+
+<!-- Style switcher - demo only - @todo: remove in production -->
+<div class="colour-switcher">
+  <a href="#" class="colour-switcher-toggle" data-toggle="class" data-target=".colour-switcher"> <i class="fa fa-paint-brush"></i> </a>
+  <h5 class="text-uppercase my-0">
+    Theme Colours
+  </h5>
+  <hr />
+  <div class="theme-colours"> <a href="#green" class="green active" data-toggle="tooltip" data-placement="right" data-original-title="Green (Default)">Green</a> <a href="#red" class="red" data-toggle="tooltip" data-placement="right" data-original-title="Red">Red</a> <a href="#blue" class="blue" data-toggle="tooltip" data-placement="right" data-original-title="Blue">Blue</a> <a href="#purple" class="purple" data-toggle="tooltip" data-placement="right" data-original-title="Purple">Purple</a> <a href="#pink" class="pink" data-toggle="tooltip" data-placement="right" data-original-title="Pink">Pink</a> <a href="#orange" class="orange" data-toggle="tooltip" data-placement="right" data-original-title="Orange">Orange</a> <a href="#lime" class="lime" data-toggle="tooltip" data-placement="right" data-original-title="Lime">Lime</a> <a href="#blue-dark" class="blue-dark" data-toggle="tooltip" data-placement="right" data-original-title="Blue-dark">Blue-dark</a> <a href="#red-dark" class="red-dark" data-toggle="tooltip" data-placement="right" data-original-title="Red-dark">Red-dark</a> <a href="#brown" class="brown" data-toggle="tooltip" data-placement="right" data-original-title="Brown">Brown</a> <a href="#cyan-dark" class="cyan-dark" data-toggle="tooltip" data-placement="right" data-original-title="Cyan-dark">Cyan-dark</a> <a href="#yellow" class="yellow" data-toggle="tooltip" data-placement="right" data-original-title="Yellow">Yellow</a> <a href="#slate" class="slate" data-toggle="tooltip" data-placement="right" data-original-title="Slate">Slate</a> <a href="#olive" class="olive" data-toggle="tooltip" data-placement="right" data-original-title="Olive">Olive</a> <a href="#teal" class="teal" data-toggle="tooltip" data-placement="right" data-original-title="Teal">Teal</a> <a href="#green-bright" class="green-bright" data-toggle="tooltip" data-placement="right" data-original-title="Green-bright">Green-bright</a> </div>
+  <hr />
+  <p class="text-xs text-muted">Cookies are NOT enabled so colour selection is not persistent.</p>
+  <p class="text-xs my-0"><a href="index.html">Back to main homepage</a></p>
+  <p class="text-xs my-0"><a href="intro.html">Back to intro page</a></p>
+</div>
+<!--Hidden elements - excluded from jPanel Menu on mobile-->
+<div class="hidden-elements js-off-canvas-exclude">
+  <!--@modal - signup modal-->
+  <div class="modal fade" id="signup-modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+      <form action="signup.html">
+        <div class="modal-content">
+          <div class="modal-header bg-light">
+            <h4 class="modal-title">
+              Sign Up
+            </h4>
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <h6 class="op-8">
+                Price Plan
+              </h6>
+              <select class="form-control">
+                <option>Basic</option>
+                <option>Pro</option>
+                <option>Pro +</option>
+              </select>
+            </div>
+            <hr />
+
+            <h6 class="op-8">
+              Account Information
+            </h6>
+            <div class="form-group">
+              <label class="sr-only" for="signup-first-name">First Name</label>
+              <input type="text" class="form-control" id="signup-first-name" placeholder="First name">
+            </div>
+            <div class="form-group">
+              <label class="sr-only" for="signup-last-name">Last Name</label>
+              <input type="text" class="form-control" id="signup-last-name" placeholder="Last name">
+            </div>
+            <div class="form-group">
+              <label class="sr-only" for="signup-username">Userame</label>
+              <input type="text" class="form-control" id="signup-username" placeholder="Username">
+            </div>
+            <div class="form-group">
+              <label class="sr-only" for="signup-email">Email address</label>
+              <input type="email" class="form-control" id="signup-email" placeholder="Email address">
+            </div>
+            <div class="form-group">
+              <label class="sr-only" for="signup-password">Password</label>
+              <input type="password" class="form-control" id="signup-password" placeholder="Password">
+            </div>
+            <div class="form-check text-xs">
+              <label class="form-check-label op-8">
+                <input type="checkbox" value="term" class="form-check-input mt-1">
+                I agree with the Terms and Conditions.
+              </label>
+            </div>
+          </div>
+          <div class="modal-footer bg-light py-3">
+            <div class="d-flex align-items-center">
+              <button type="button" class="btn btn-primary">Sign Up</button>
+              <button type="button" class="btn btn-link ml-1" data-dismiss="modal" aria-hidden="true">Cancel</button>
+            </div>
+            <p class="text-xs text-right text-lh-tight op-8 my-0 ml-auto">Already signed up? <a href="login.html">Login here</a></p>
+          </div>
+        </div>
+        <!-- /.modal-content -->
+      </form>
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+  <!-- /.modal -->
+
+  <!--@modal - login modal-->
+  <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+          <div class="modal-header bg-light">
+            <h4 class="modal-title">
+              Login
+            </h4>
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label class="sr-only" for="login-email">Email</label>
+              <input type="email" id="login-email" class="form-control email" placeholder="Email">
+            </div>
+            <div class="form-group mb-0">
+              <label class="sr-only" for="login-password">Password</label>
+              <input type="password" id="login-password" class="form-control password mb-1" placeholder="Password">
+            </div>
+          </div>
+          <div class="modal-footer bg-light py-3">
+            <div class="d-flex align-items-center">
+              <button type="button" class="btn btn-primary">Login</button>
+              <button type="button" class="btn btn-link ml-1" data-dismiss="modal" aria-hidden="true">Cancel</button>
+            </div>
+            <p class="text-xs text-right text-lh-tight op-8 my-0 ml-auto">
+              Not a member? <a href="#" class="signup">Sign up now!</a>
+              <br />
+              <a href="#">Forgotten password?</a>
+            </p>
+          </div>
+        <!-- Modal -->
+        <div class="modal fade modal-duration" data-modal-duration="1000" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" id="vote-modal">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title">
+                  感谢:
+                </h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+              </div>
+              <div class="modal-body"> 感谢您选择我们的产品! </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /.modal-content -->
+
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+  <!-- /.modal -->
+</div>
+
+<script type="text/javascript">
+  // 绑定点击事件
+  function shop_list () {
+    // 发送ajax 请求 需要 五步
+
+    // （1）创建异步对象
+    var ajaxObj = new XMLHttpRequest();
+
+    // （2）设置请求的参数。包括：请求的方法、请求的url。
+    ajaxObj.open('get', 'http://114.116.110.134:8080/springmvc/Test');
+
+    // （3）发送请求
+    ajaxObj.send();
+
+    //（4）注册事件。 onreadystatechange事件，状态改变时就会调用。
+    //如果要在数据完整请求回来的时候才调用，我们需要手动写一些判断的逻辑。
+    ajaxObj.onreadystatechange = function () {
+      // 为了保证 数据 完整返回，我们一般会判断 两个值
+      shop_table = "";
+      if (ajaxObj.readyState == 4 && ajaxObj.status == 200) {
+        // 如果能够进到这个判断 说明 数据 完美的回来了,并且请求的页面是存在的
+        // 5.在注册的事件中 获取 返回的 内容 并修改页面的显示
+        console.log('数据返回成功');
+
+        // 数据是保存在 异步对象的 属性中
+        console.log(ajaxObj.responseText);
+
+        offline_shops = JSON.parse(ajaxObj.responseText);
+
+        if (offline_shops.status === 1 & offline_shops.count === offline_shops.shops.length) {
+          for (i = 0; i < offline_shops.count; i++) {
+            shop_table += "<div class='card-deck'><div class='card product-card'><div class='pos-relative'> \
+        </div><div class='card-body'><h5 class='card-title'>" + offline_shops.shops[i]['name'] +
+              "</h5><h6 class='card-title'>" + offline_shops.shops[i]['addr'] + "</h6></div><div class='card-footer'><a id='a'  \
+    name='vote' class='btn btn-primary btn-vote text-light' value='a'>℡" + offline_shops.shops[i]['tel'] + "</a></div></div></div><br>";
+          }
+        } else { shop_table = "<H3><font color='blue'>门店升级中...</H3>"; }
+      }
+      else { shop_table = "<H3><font color='red'>敬请期待！</H3>"; }
+      
+      // 修改页面的显示
+      document.querySelector('.card-deck-wrapper').innerHTML = shop_table;
+    }
+  }
+      
+    
+</script>
+
+<!--jQuery 3.3.1 via CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- Popper 1.14.3 via CDN, needed for Bootstrap Tooltips & Popovers -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+
+<!-- Bootstrap v4.1.3 JS via CDN -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+
+<!-- JS plugins required on all pages NOTE: Additional non-required plugins are loaded ondemand as of AppStrap 2.5 To disable this and load plugin assets manually simple add data-plugins-manual=true to the body tag -->
+
+<!--Custom scripts & AppStrap API integration -->
+<script src="assets/js/custom-script.js"></script>
+<!--AppStrap scripts mainly used to trigger libraries/plugins -->
+<script src="assets/js/script.js"></script>
+</body>
+</html>
