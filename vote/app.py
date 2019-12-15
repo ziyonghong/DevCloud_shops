@@ -1,6 +1,8 @@
-# -*- coding: utf-8 -*
+#!/usr/bin/env python
+# -*- coding:utf-8 -*-
 
-from flask import Flask, render_template, request, make_response, g
+
+from flask import Flask, render_template, request, make_response, g, redirect
 from redis import Redis
 import os
 import socket
@@ -8,6 +10,7 @@ import random
 import json
 import uuid
 import sys
+import requests
 
 reload(sys)
 sys.setdefaultencoding('utf-8')
@@ -59,6 +62,15 @@ def hello():
     resp.set_cookie('voter_id', voter_id)
     return resp
 
+@app.route("/shop_list")
+def shop_list():
+
+    return render_template('shop_list.html')
+
+@app.route("/index")
+def index():
+
+    return redirect('/')
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=80, debug=True, threaded=True)
