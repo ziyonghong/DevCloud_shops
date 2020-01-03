@@ -13,7 +13,7 @@
   * 业务逻辑:用户可以通过浏览器访问此服务的WebUI,并在特定商品上点击Like按钮。服务将用户所选择物品的记录 保存在Redis缓存中。
   * 技术栈:Python, Flask框架
   * 应用服务器:Gunicorn
-* 管理端UI服务:
+* 管理端UI服务:
   * 业务逻辑:用户可以通过浏览器访问此服务的WebUI,会动态显示客户端UI上用户点击Like按钮的统计数据。此数据来自PostgreSQL数据库。
   * 技术栈:node.js, express框架
   * 应用服务器:server.js
